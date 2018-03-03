@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Profile</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="resources/css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  .profileForm{
+    padding-left: 5px;
+  }
+
+
+</head>
+
+<body>
+  <script src="resources/js/scripts.js"></script>
+  <nav>
+    <ul>
+      <li><a href="index.html">HoosAround</a></li>
+      <li><a href="match-me.html">Match Me</a></li>
+      <li><a href="my-matches.html">My Matches</a></li>
+      <li style="float:right"><a class = "current" href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
+      <li style="float:right"><a href="myProfile.html">My Profile</a></li>
+    </ul>
+  </nav>
+
+  <h3 align="center">Design Your Profile!<br></h3>
+  <form class="profileForm">
+    Full Name:<br>
+    <input type="text" name="fullName"> <br>
+    Major:<br>
+    <input type="text" name="major"> <br>
+    Favorite Hobby: <br>
+    <input type="text" name="favoriteHobby"> <br>
+    <br>
+    Year: <br>
+    <input type="radio" name="year" value="1st" checked>1st Year<br>
+    <input type="radio" name="year" value="2nd"> 2nd Year<br>
+    <input type="radio" name="year" value="3rd"> 3rd Year <br>
+    <input type="radio" name="year" value="4th"> 4th Year <br>
+    <br>
+    <div class="container">
+    <div class="form-group">
+        <label for="socialMedia">Add Your Social Media so People Can Get to Know You!</label>
+        <input type="text" id="socialMedia" class="form-control" name="SM" />
+        <span class="error" id="socialMedia-note"></span>
+    </div>
+
+    <input type="button" class="btn btn-submit" id="add" value="Add Link" onclick="addRow()"/>
+    <div id="links">
+      <table id="linkTable" class="table" >
+        <thead>   <!-- set table headers -->
+          <tr>
+            <th>Social Media Link</th>
+            <th>(Remove)</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+
+
+  </form>
+
+
+
+</body>

@@ -7,6 +7,10 @@
   <title>HoosAround</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- the width=device-width part sets the width of the page to follow
+          the screen-width of the device (which wil vary depending on the device)
+  !-->
 
   <link rel="stylesheet" href="resources/css/styles.css?v=1.0">
 
@@ -22,7 +26,45 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  table {
+      font-family: Futura;
+      border-collapse: collapse;
+      width: 85%;
+  }
 
+  td, th {
+      border: 1px solid black;
+      text-align: left;
+      padding: 8px;
+  }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+.vertical-menu {
+    width: 200px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_menu_scroll !-->
 </head>
 
 <body>
@@ -32,8 +74,67 @@
       <li><a class="current" href="index.html">HoosAround</a></li>
       <li><a href="match-me.html">Match Me</a></li>
       <li><a href="my-matches.html">My Matches</a></li>
+      <li style="float:right"><a href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
+      <li style="float:right"><a href="myProfile.html">My Profile</a></li>
+
     </ul>
   </nav>
+
+  <h1>People Nearby</h1>
+  <table align = "center" class= "vertical-menu">
+    <tr class = "active">
+      <th align="center">Name</th>
+      <th>Major</th>
+      <th>Favorite Hobby</th>
+      <th>Year</th>
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://www.w3schools.com/html/">Thomas Jefferson</a>
+      </th>
+      <td>Computer Science</td>
+      <td>Commenting on Stack Overflow</td>
+      <td>4th Year</td>
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://www.w3schools.com/html/">John Doe</a>
+      </th>
+      <td>Anthropology</td>
+      <td>Quality Antiquing</td>
+      <td>1st Year</td>
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://www.w3schools.com/html/">Jane Smith</a>
+      </th>
+      <td>Mathematics</td>
+      <td>Bowling with Railings</td>
+      <td>3rd Year</td>
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://www.w3schools.com/html/">Mary Lou</a>
+      </th>
+      <td>English</td>
+      <td>Writing Poetry</td>
+      <td>3rd Year</td>
+    </tr>
+
+    <tr>
+      <th>
+        <a href="https://www.w3schools.com/html/">Jeffrey Swallows</a>
+      </th>
+      <td>Medieval Literature</td>
+      <td>Live Action Role Playing Games</td>
+      <td>2nd Year</td>
+    </tr>
+
+  </table>
 
 </body>
 </html>
