@@ -26,6 +26,17 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+$(document).ready(function(){
+    $("tr").hover(function(){
+        $(this).css("background-color", "blue");
+        }, function(){
+        $(this).css("background-color", "white");
+    });
+});
+</script>
+
   <style>
   table {
       font-family: Futura;
