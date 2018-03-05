@@ -21,17 +21,40 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-  .profileForm{
-    padding-left: 5px;
+  <script type="text/javascript">
+  function setFocus()
+     {
+        document.getElementById("fullName").focus();   // access element of document with id="taskdesc" and set focus on it
+
+     }
+  </script>
+
+
+  <style>
+  .absolutepositioning {
+    position: absolute;
+    left: 10px;
   }
+
+  .titleBorder{
+    border: 5px solid black;
+    outline-style: solid;
+    outline-color: LimeGreen;
+    outline-width: 10px;
+}
+  </style>
+
+
 
 
 </head>
 
-<body>
+<body onload = "setFocus();">
   <script src="resources/js/scripts.js"></script>
-  <nav>
+
+  <nav> <!--sitemap!-->
     <ul>
       <li><a href="index.html">HoosAround</a></li>
       <li><a href="match-me.html">Match Me</a></li>
@@ -41,29 +64,36 @@
     </ul>
   </nav>
 
-  <h3 align="center">Design Your Profile!<br></h3>
-  <form class="profileForm">
+  <h3 align="center" class="titleBorder"><b>Design Your Profile!</b><br></h3>
+
+
+  <form class="absolutepositioning"> <!--abs positioning gives padding!-->
     Full Name:<br>
-    <input type="text" name="fullName"> <br>
+    <input type="text" id="fullName" name="fullName"> <br>
     Major:<br>
     <input type="text" name="major"> <br>
     Favorite Hobby: <br>
     <input type="text" name="favoriteHobby"> <br>
     <br>
     Year: <br>
-    <input type="radio" name="year" value="1st" checked>1st Year<br>
+    <input type="radio" name="year" value="1st">1st Year<br>
     <input type="radio" name="year" value="2nd"> 2nd Year<br>
     <input type="radio" name="year" value="3rd"> 3rd Year <br>
     <input type="radio" name="year" value="4th"> 4th Year <br>
     <br>
+
+
     <div class="container">
+
     <div class="form-group">
         <label for="socialMedia">Add Your Social Media so People Can Get to Know You!</label>
         <input type="text" id="socialMedia" class="form-control" name="SM" />
         <span class="error" id="socialMedia-note"></span>
     </div>
 
-    <input type="button" class="btn btn-submit" id="add" value="Add Link" onclick="addRow()"/>
+    <input type="button" class="btn btn-submit" id="addLink" value="Add Link" onclick="addRow()"/>
+  </form>
+
     <div id="links">
       <table id="linkTable" class="table" >
         <thead>   <!-- set table headers -->
@@ -74,10 +104,62 @@
         </thead>
       </table>
     </div>
+
   </div>
 
 
-  </form>
+
+
+  <script>
+  function addRow()
+{
+   var link = document.getElementById("link").value;
+   var removeoption = "<input type=button value=' X ' onClick='delRow()'>";
+   if (due === '' || isNaN((new Date(due)).valueOf()))
+           {
+              document.getElementById("duedate").focus();
+              document.getElementById("duedate-note").innerHTML =
+              	    "Date must be in <code>mm/dd/yyyy</code> or <code>mm/dd/yy</code> format and " +
+           	    "month and date must be in appropriate ranges";
+           }
+           else
+           {
+              document.getElementById("duedate-note").innerHTML = "";
+
+              // put all pieces of data in an array for later used to create cell content of a row
+              var rowdata = [desc, due, priority, removeoption];
+      var tableRef = document.getElementById("linkTable");
+
+            // create an empty <tr> element and add it to the table
+            // using insertRow(index) method
+      var newRow = tableRef.insertRow(tableRef.rows.length);
+            // add event listener, on mouseover, set row index. This will be used when deleting a row
+      newRow.onmouseover = function() { tableRef.clickedRowIndex = this.rowIndex; };
+            // alternatively, use data-index to store index of the line
+            //  (note: data-* attributes can store arbitrary data with elements)
+            // eg: <div id="elem" data-index=3></div>
+
+      var newCell = "";
+      var i = 0;
+            // insert new cells (<td> elements) at the 1st, 2nd, 3rd, 4th position of the new <tr> element
+            // using insertCell(method) method
+      while (i < 4)
+      {
+        newCell = newRow.insertCell(i);
+        newCell.innerHTML = rowdata[i];
+        newCell.onmouseover = this.rowIndex;
+        i++;
+      }
+  }
+
+ function delRow()
+   {
+ 	 if (confirm("Press OK to delete. This action is unrecoverable.") == true)
+         document.getElementById("todoTable").deleteRow(document.getElementById("todoTable").clickedRowIndex);
+   }
+
+
+  </script>
 
 
 
