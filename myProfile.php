@@ -60,11 +60,11 @@
 
   <nav> <!--sitemap!-->
     <ul>
-      <li><a href="index.html">HoosAround</a></li>
+      <li><a href="index.php">HoosAround</a></li>
       <li><a href="match-me.html">Match Me</a></li>
       <li><a href="my-matches.html">My Matches</a></li>
-      <li style="float:right"><a class = "current" href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
-      <li style="float:right"><a href="myProfile.html">My Profile</a></li>
+      <li style="float:right"><a class = "current" href="myProfile.php"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
+      <li style="float:right"><a href="myProfile.php">My Profile</a></li>
     </ul>
   </nav>
 
@@ -79,10 +79,10 @@
     $nameLength = document.getElementById("fullName");
     <?php
     if(isset($_POST['fullName']) && strlen($nameLength) > 4){
-      echo "Thank you for inputting your name correctly!"
+      echo "Thank you for inputting your name correctly!";
     }
     elseif (empty($_POST['fullName']) || strlen($nameLength) <= 4){
-      echo "Please input your name properly."
+      echo "Please input your name properly.";
     }
     ?>
 
@@ -94,19 +94,19 @@
     Favorite Hobbies: <br>
     <input type="text" name="favoriteHobbies"> <br>
     <?php
-      if(isset($_POST(['favoriteHobbies']))
+      if(isset($_POST['favoriteHobbies']))
       {
         $hobbyStr = $_POST["favoriteHobbies"];
         $hobbyArr = explode(",", $hobbyStr);
         $arraySize = 0;
         foreach($hobbyArr as $value){
-          arraySize = arraySize + 1;
+          $arraySize = $arraySize + 1;
         }
         echo "Your listed activities include";
-        for($count = 0, $count < $arraySize; $count++){
-          echo $hobbyArr[count] . ",";
+        for($count = 0; $count < $arraySize; $count++){
+          echo $hobbyArr[$count] . ",";
         }
-
+      }
 
 
     ?>

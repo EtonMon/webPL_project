@@ -79,14 +79,34 @@ $(document).ready(function(){
 </head>
 
 <body>
+  <?php
+    function getPeople(){
+
+      $names = Array("Thomas Jefferson", "John Doe", "Jane Smith", "Mary Lou", "Jeffrey Swallows");
+      $majors = Array("Thomas Jefferson" => "Computer Science", "John Doe" => "Anthropology", "Jane Smith" => "Mathematics", "Mary Lou" => "English", "Jeffrey Swallows" => "Medieval Literature");
+      $hobbies = Array("Thomas Jefferson" => "Commenting on Stack Overflow", "John Doe" => "Quality Antiquing", "Jane Smith" => "Bowling with Railings", "Mary Lou" => "Writing Poetry", "Jeffrey Swallows" => "Live Action Role Playing Games");
+      $years = Array("Thomas Jefferson" => "4th", "John Doe" => "1st", "Jane Smith" => "3rd", "Mary Lou" => "3rd", "Jeffrey Swallows" => "2nd");
+
+      foreach($names as $name){
+        echo "<tr>
+          <th>
+            <a href=\"\">$name</a>
+          </th>
+          <td>$majors[$name]</td>
+          <td>$hobbies[$name]</td>
+          <td>$years[$name] Year</td>
+        </tr>";
+      }
+    }
+  ?>
   <script src="resources/js/scripts.js"></script>
   <nav>
     <ul>
-      <li><a class="current" href="index.html">HoosAround</a></li>
+      <li><a class="current" href="index.php">HoosAround</a></li>
       <li><a href="match-me.html">Match Me</a></li>
       <li><a href="my-matches.html">My Matches</a></li>
-      <li style="float:right"><a href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
-      <li style="float:right"><a href="myProfile.html">My Profile</a></li>
+      <li style="float:right"><a href="myProfile.php"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
+      <li style="float:right"><a href="myProfile.php">My Profile</a></li>
 
     </ul>
   </nav>
@@ -100,7 +120,10 @@ $(document).ready(function(){
       <th>Year</th>
     </tr>
 
-    <tr>
+    <?php
+      getPeople();
+    ?>
+    <!-- <tr>
       <th>
         <a href="https://www.google.com/">Thomas Jefferson</a>
       </th>
@@ -143,7 +166,7 @@ $(document).ready(function(){
       <td>Medieval Literature</td>
       <td>Live Action Role Playing Games</td>
       <td>2nd Year</td>
-    </tr>
+    </tr> -->
   </table>
 
 </body>
