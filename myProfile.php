@@ -76,7 +76,7 @@
     <input type="text" id="fullName" name="fullName">
     <span class="error" id="fullName-note"></span>
 
-    $nameLength = document.getElementById("fullName");
+    $nameLength = $_POST(["fullName"]);
     <?php
     if(isset($_POST['fullName']) && strlen($nameLength) > 4){
       echo "Thank you for inputting your name correctly!";
@@ -88,7 +88,22 @@
 
     <br>
     Major:<br>
-    <input type="text" name="major"> <br>
+    <select name="major"> <br>
+      <option value="">Please Select a Major</option>
+      <option value="CS">Computer Science</option>
+      <option value="CPE">Computer Engineering</option>
+      <option value="EE">Electrical Engineering</option>
+      <option value="ME">Mechanical Engineering</option>
+      <option value="BME">Biomedical Engineering</option>
+      <option value="CE">Civil Engineering</option>
+      <option value="AE">Aerospace Engineering</option>
+      <option value="SE">Systems Engineering</option>
+    </select>
+    <br/>
+    if(!isset($_POST(['major'])){
+      echo "Please Select a Major";
+    }
+
 
 
     Favorite Hobbies: <br>
@@ -170,3 +185,4 @@
 
 
 </body>
+</html>
