@@ -71,8 +71,60 @@
   <h3 align="center" class="titleBorder"><b>Design Your Profile!</b><br></h3>
 
 
-  <form action="" method="post" class="absolutepositioning"> <!--abs positioning gives padding!-->
-    Full Name:<br>
+  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" > <!--abs positioning gives padding!-->
+    <dl>
+       <dt>Name:</dt>
+       <dd><input type="text" name="name"
+                value="<?php if (isset($_POST['name'])) echo $_POST['name']; ?>" /></dd>
+       <dt>Major </dt>
+       <dd><input type="text" name="major"
+                value="<?php if (isset($_POST['major'])) echo $_POST['major']; ?>" /></dd>
+       <dt>Hobbies:</dt>
+       <dd><textarea rows="5" cols="20" name="hobbies"
+                value="<?php if (isset($_POST['hobbies'])) echo $_POST['hobbies']; ?>"></textarea> </dd>
+      <dt>Year</dt>
+      <dd><input type="text" name="year"
+               value="<?php if (isset($_POST['year'])) echo $_POST['year']; ?>"/> </dd>
+
+    </dl>
+
+    <input type="submit" value="Submit" />
+
+  </form>
+
+  <?php
+    $name = $major = $hobbies = $year = NULL;
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+       if (empty($_POST['name']))
+          echo "Please enter your name <br />";
+       else
+          $name = trim($_POST['name']);
+
+       if (empty($_POST['major']))
+          echo "Please enter your major <br />";
+       else
+          $major = trim($_POST['major']);
+
+       if (empty($_POST['hobbies']))
+          echo "Please enter your hobbies <br />";
+       else
+          $hobbies = trim($_POST['hobbies']);
+
+       if (empty($_POST['year']))
+          echo "Please enter your year <br />";
+       else
+          $year = trim($_POST['year']);
+    }
+
+    if ($name != NULL && $major != NULL && $hobbies != NULL && $year)
+    {
+       echo "Thanks for submitting your profile, $name <br />";
+    }
+
+  ?>
+    <!--Full Name:<br>
     <input type="text" id="fullName" name="fullName">
     <span class="error" id="fullName-note"></span>
 
@@ -100,9 +152,11 @@
       <option value="SE">Systems Engineering</option>
     </select>
     <br/>
-    if(!isset($_POST(['major'])){
-      echo "Please Select a Major";
-    }
+    <?php
+      if(!isset($_POST['major'])){
+        echo "Please Select a Major <br/>";
+      }
+    ?>
 
 
 
@@ -135,10 +189,10 @@
     <input type="radio" name="year" value="2nd"> 2nd Year<br>
     <input type="radio" name="year" value="3rd"> 3rd Year <br>
     <input type="radio" name="year" value="4th"> 4th Year <br>
-    <br>
+    <br> -->
 
 
-    <div class="container">
+    <!-- <div class="container">
 
     <div class="form-group">
         <label for="socialMedia">Add Your Social Media so People Can Get to Know You!</label>
@@ -146,13 +200,12 @@
         <span class="error" id="socialMedia-note"></span>
     </div>
 
-    <input type="button" class="btn btn-submit" id="addLink" value="Add Link" onclick="addRow()"/>
-  </form>
+    <input type="button" class="btn btn-submit" id="addLink" value="Add Link" onclick="addRow()"/> -->
 
-    <div id="links">
+    <!-- <div id="links">
       <table id="linkTable" class="table" >
         <thead>   <!-- set table headers -->
-          <tr>
+          <!-- <tr>
             <th>Social Media Link</th>
             <th>(Remove)</th>
           </tr>
@@ -160,7 +213,7 @@
       </table>
     </div>
 
-  </div>
+  </div> -->
 
 
 
