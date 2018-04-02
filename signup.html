@@ -100,15 +100,18 @@
 
   <nav> <!--sitemap!-->
     <ul>
-      <li><a href="index.php">HoosAround</a></li>
+      <li><a href="index.html">HoosAround</a></li>
       <li><a href="match-me.html">Match Me</a></li>
       <li><a href="my-matches.html">My Matches</a></li>
-      <li style="float:right"><a class = "current" href="myProfile.php"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
-      <li style="float:right"><a href="myProfile.php">My Profile</a></li>
+      <li style="float:right"><a class = "current" href="http://localhost:8080/HoosAround/session"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
+      <li style="float:right"><a href="http://localhost:8080/HoosAround/session">My Profile</a></li>
     </ul>
   </nav>
 
   <h3 align="center" class="titleBorder"><b>Design Your Profile!</b><br></h3>
+
+
+
 
   <form onSubmit="return submitIt(this)" action="http://localhost:8080/HoosAround/session" method="POST" > <!--abs positioning gives padding!-->
     <dl>
@@ -126,6 +129,8 @@
     <input type="submit" value="Submit" />
 
   </form>
+
+
 
 </body>
 </html>

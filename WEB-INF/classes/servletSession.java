@@ -50,72 +50,149 @@ public class servletSession extends HttpServlet
    	 // HttpSession session = request.getSession();
         session.invalidate();
 
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet example</title>");
-        out.println("<link rel=stylesheet href='styles/example-style.css' type='text/css'>");
-        out.println("</head>");
-        out.println("<body>");
+        String x = "";
+        x+="<html lang='en'>"+
+        "<head>"+
+          "<meta charset='utf-8'>"+
+
+          "<title>My Matches</title>"+
+          "<meta name='description' content='The HTML5 Herald'>"+
+          "<meta name='author' content='SitePoint'>"+
+
+          "<link rel='stylesheet' href='resources/css/styles.css?v=1.0'>"+
+
+          "<!--[if lt IE 9]>"+
+            "<script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js'></script>"+
+          "<![endif]-->"+
+
+          "<!-- Latest compiled and minified CSS -->"+
+          "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>"+
+
+          "<!-- jQuery library -->"+
+          "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>"+
+
+          "<!-- Latest compiled JavaScript -->"+
+          "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>"+
+
+        "</head>"+
+
+        "<body>"+
+          "<script src='resources/js/scripts.js'></script>"+
+          "<nav>"+
+            "<ul>"+
+              "<li><a href='index.html'>HoosAround</a></li>"+
+              "<li><a href='match-me.html'>Match Me</a></li>"+
+              "<li><a href='my-matches.html'>My Matches</a></li>"+
+              "<li style='float:right'><a class = 'current' href='http://localhost:8080/HoosAround/session'><img src='http://www.freeiconspng.com/uploads/profile-icon-9.png' width=20 height=20></a></li>"+
+              "<li style='float:right'><a href='http://localhost:8080/HoosAround/session'>My Profile</a></li>"+
+            "</ul>"+
+          "</nav>";
+         out.println(x);
         out.println("  <div>");
-        out.println("    <h1>Servlet example</h1>");
-        out.println("    Your session have been invaldiated <br/><br/>");
-        out.println("    <a href=\"" + url + "\"?createSession\">Create new session</a>");
+        out.println("    You have succesfully logged out <br/><br/>");
         out.println("  </div>");
         out.println("</body>");
         out.println("</html>");
+     }
+     else if(session.getAttribute("name")==null){
+       String x = "";
+       x+="<html lang='en'>"+
+       "<head>"+
+         "<meta charset='utf-8'>"+
+
+         "<title>My Matches</title>"+
+         "<meta name='description' content='The HTML5 Herald'>"+
+         "<meta name='author' content='SitePoint'>"+
+
+         "<link rel='stylesheet' href='resources/css/styles.css?v=1.0'>"+
+
+         "<!--[if lt IE 9]>"+
+           "<script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js'></script>"+
+         "<![endif]-->"+
+
+         "<!-- Latest compiled and minified CSS -->"+
+         "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>"+
+
+         "<!-- jQuery library -->"+
+         "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>"+
+
+         "<!-- Latest compiled JavaScript -->"+
+         "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>"+
+
+       "</head>"+
+
+       "<body>"+
+         "<script src='resources/js/scripts.js'></script>"+
+         "<nav>"+
+           "<ul>"+
+             "<li><a href='index.html'>HoosAround</a></li>"+
+             "<li><a href='match-me.html'>Match Me</a></li>"+
+             "<li><a href='my-matches.html'>My Matches</a></li>"+
+             "<li style='float:right'><a class = 'current' href='http://localhost:8080/HoosAround/session'><img src='http://www.freeiconspng.com/uploads/profile-icon-9.png' width=20 height=20></a></li>"+
+             "<li style='float:right'><a href='http://localhost:8080/HoosAround/session'>My Profile</a></li>"+
+           "</ul>"+
+         "</nav>";
+
+         x+="<p>You do not have a profile. Sign up </p><a href='signup.html'>here</a>";
+
+         x+="</body>"+
+         "</html>";
+         out.println(x);
+
      }
      else
      {
         // get session
     	 // HttpSession session = request.getSession();
 
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet example</title>");
-        out.println("<link rel=stylesheet href='styles/example-style.css' type='text/css'>");
-        out.println("</head>");
-        out.println("<body>");
+       String x = "";
+       x+="<html lang='en'>"+
+       "<head>"+
+         "<meta charset='utf-8'>"+
+
+         "<title>My Matches</title>"+
+         "<meta name='description' content='The HTML5 Herald'>"+
+         "<meta name='author' content='SitePoint'>"+
+
+         "<link rel='stylesheet' href='resources/css/styles.css?v=1.0'>"+
+
+         "<!--[if lt IE 9]>"+
+           "<script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js'></script>"+
+         "<![endif]-->"+
+
+         "<!-- Latest compiled and minified CSS -->"+
+         "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>"+
+
+         "<!-- jQuery library -->"+
+         "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>"+
+
+         "<!-- Latest compiled JavaScript -->"+
+         "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>"+
+
+       "</head>"+
+
+       "<body>"+
+         "<script src='resources/js/scripts.js'></script>"+
+         "<nav>"+
+           "<ul>"+
+             "<li><a href='index.html'>HoosAround</a></li>"+
+             "<li><a href='match-me.html'>Match Me</a></li>"+
+             "<li><a href='my-matches.html'>My Matches</a></li>"+
+             "<li style='float:right'><a class = 'current' href='http://localhost:8080/HoosAround/session'><img src='http://www.freeiconspng.com/uploads/profile-icon-9.png' width=20 height=20></a></li>"+
+             "<li style='float:right'><a href='http://localhost:8080/HoosAround/session'>My Profile</a></li>"+
+           "</ul>"+
+         "</nav>";
+        out.println(x);
+
         out.println("  <div>");
 
-        out.println("    <h2>Welcome " + session.getAttribute("name") + "</h2>");
+        out.println("    <h2>" + session.getAttribute("name") + "'s Profile</h2>");
 
-        out.println("<table>");
+        out.println("<p>Major: </p>" + session.getAttribute("major") + "</p>");
+        out.println("<p>Hobbies: </p>" + session.getAttribute("hobbies") + "</p>");
+        out.println("<p>Year: </p>" + session.getAttribute("year") + "</p>");
 
-        out.println("  <tr>");
-        out.println("    <td>Session Status</td>");
-        if (session.isNew())
-           out.println ("    <td>New Session</td>");
-        else
-           out.println ("    <td>Old Session</td>");
-        out.println("  </tr>");
-
-        out.println("  <tr>");
-        // Get the session ID
-        out.println("    <td>Session ID</td>");
-        out.println("    <td>" + session.getId() + "</td>");
-        out.println("  </tr>");
-
-        out.println("  <tr>");
-        // Get the created time, convert it to a Date object
-        out.println("    <td>Creation Time</td>");
-        out.println("   <td>" + new Date (session.getCreationTime()) + "</td>");
-        out.println("  </tr>");
-
-        out.println("  <tr>");
-        // Get the last time it was accessed
-        out.println("    <td>Last Accessed Time</td>");
-        out.println("    <td>" + new Date(session.getLastAccessedTime()) + "</td>");
-        out.println("  </tr>");
-
-        out.println("  <tr>");
-        // Get the max-inactive-interval setting
-        out.println("    <td>Maximum Inactive Interval (seconds)</td>");
-        out.println("    <td>" + session.getMaxInactiveInterval() + "</td>");
-        out.println("  </tr>");
-
-        out.println("</table>");
-
-        out.println("<br/><br/><a href=\"" + url + "?action=invalidate\">Invalidate the session</a>");
+        out.println("<br/><br/><a href=\"" + url + "?action=invalidate\">Logout</a>");
 
         //out.println("<br/><br/><a href=\"http://localhost/cs4640s18/php-servlet/contact_us.php\">Contact us</a>");
 
@@ -123,7 +200,7 @@ public class servletSession extends HttpServlet
         out.println("</body>");
         out.println("</html>");
      }
-     doPost(request, response);
+     // doPost(request, response);
      out.close();
    }
 
@@ -135,11 +212,58 @@ public class servletSession extends HttpServlet
       PrintWriter out = response.getWriter();
 
       String name = request.getParameter("name");
+      String major = request.getParameter("major");
+      String hobbies = request.getParameter("hobbies");
+      String year = request.getParameter("year");
 
+      request.getSession().setAttribute("name", name);
+      request.getSession().setAttribute("major", major);
+      request.getSession().setAttribute("hobbies", hobbies);
+      request.getSession().setAttribute("year", year);
 
+      String x = "";
+      x+="<html lang='en'>"+
+      "<head>"+
+        "<meta charset='utf-8'>"+
+
+        "<title>My Matches</title>"+
+        "<meta name='description' content='The HTML5 Herald'>"+
+        "<meta name='author' content='SitePoint'>"+
+
+        "<link rel='stylesheet' href='resources/css/styles.css?v=1.0'>"+
+
+        "<!--[if lt IE 9]>"+
+          "<script src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js'></script>"+
+        "<![endif]-->"+
+
+        "<!-- Latest compiled and minified CSS -->"+
+        "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>"+
+
+        "<!-- jQuery library -->"+
+        "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>"+
+
+        "<!-- Latest compiled JavaScript -->"+
+        "<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>"+
+
+      "</head>"+
+
+      "<body>"+
+        "<script src='resources/js/scripts.js'></script>"+
+        "<nav>"+
+          "<ul>"+
+            "<li><a href='index.html'>HoosAround</a></li>"+
+            "<li><a href='match-me.html'>Match Me</a></li>"+
+            "<li><a href='my-matches.html'>My Matches</a></li>"+
+            "<li style='float:right'><a class = 'current' href='http://localhost:8080/HoosAround/session'><img src='http://www.freeiconspng.com/uploads/profile-icon-9.png' width=20 height=20></a></li>"+
+            "<li style='float:right'><a href='http://localhost:8080/HoosAround/session'>My Profile</a></li>"+
+          "</ul>"+
+        "</nav>";
+      out.println(x);
+
+      out.println("<br/><br/>Thanks for submitting your profile, " + name + "<br/>");
+      out.println("<a href =" + url + ">View Profile</a>");
 //      if (username != null && email != null && comment != null)
 //      {
-         printConfirmation(name, out);
 //         doGet(request, response);       // submit more comment?
 //      }
 //      else
@@ -148,6 +272,9 @@ public class servletSession extends HttpServlet
 //         doGet(request, response);
 //      }
 //
+
+      out.println("</body>");
+      out.println("</html>");
       out.close();
    }
 
@@ -193,12 +320,12 @@ public class servletSession extends HttpServlet
 //   }
 //
 
-   private void printConfirmation(String name, PrintWriter out)
-   {
-      SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-      Date date = new Date();
-
-      out.println("<br/><br/>Thanks for submitting your profile, " + name + "<br/>");
-   }
+   // private void printConfirmation(String name, PrintWriter out)
+   // {
+   //    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+   //    Date date = new Date();
+   //
+   //    out.println("<br/><br/>Thanks for submitting your profile, " + name + "<br/>");
+   // }
 
 }
