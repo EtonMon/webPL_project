@@ -1,0 +1,16 @@
+<?xml version = "1.0"?>
+<products>
+  <product id="001">
+    <name>Monitor</name>
+    <price>200</price>
+  </product>
+  <product id="002">
+    <name>Hard drive</name>
+    <price>150</price>
+  </product>
+  <product id="003">
+    <name>Keyboard</name>
+    <price>20</price>
+  </product>
+
+</products>
