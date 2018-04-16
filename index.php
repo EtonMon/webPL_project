@@ -107,7 +107,7 @@ $(document).ready(function(){
       <li><a href="my-matches.html">My Matches</a></li>
       <li style="float:right"><a href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
       <li style="float:right"><a href="myProfile.html">My Profile</a></li>
-
+      <li style="float:right"><a href = "signup.html">Sign Up!</a></li>
     </ul>
   </nav>
 

@@ -26,10 +26,6 @@
   <script type="text/javascript">
   function setFocus()
   {
-<<<<<<< HEAD
-    document.getElementById("fullName").focus();   // access element of document with id="taskdesc" and set focus on it
-
-=======
     document.getElementById("name").focus();   // access element of document with id="taskdesc" and set focus on it
   }
 
@@ -72,7 +68,6 @@
         <!-- alert("Thank you " + form.name.value + " for the information.") -->
         return true;
      }
->>>>>>> 6daa975c4baa8907290fdef9fba9835ea1c86ac3
   }
   </script>
 
@@ -86,7 +81,9 @@
     border: 5px solid black;
     outline-style: solid;
     outline-color: LimeGreen;
-    outline-width: 10px;
+    outline-width: 7px;
+    width: 75%;
+    margin-left: 157px;
 }
   </style>
 
@@ -98,149 +95,29 @@
       }
     </style>
 
+    <style>
+      body{background-color: LightBlue}
+    </style>
+    
 </head>
 
-<<<<<<< HEAD
-<body onload = "setFocus();">
-=======
 <body>
->>>>>>> 6daa975c4baa8907290fdef9fba9835ea1c86ac3
   <script src="resources/js/scripts.js"></script>
 
   <nav> <!--sitemap!-->
     <ul>
-<<<<<<< HEAD
-      <li><a href="index.html">HoosAround</a></li>
+      <li><a href="table.html">HoosAround</a></li>
       <li><a href="match-me.html">Match Me</a></li>
       <li><a href="my-matches.html">My Matches</a></li>
       <li style="float:right"><a class = "current" href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
       <li style="float:right"><a href="myProfile.html">My Profile</a></li>
-=======
-      <li><a href="index.php">HoosAround</a></li>
-      <li><a href="match-me.html">Match Me</a></li>
-      <li><a href="my-matches.html">My Matches</a></li>
-      <li style="float:right"><a class = "current" href="myProfile.php"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
-      <li style="float:right"><a href="myProfile.php">My Profile</a></li>
->>>>>>> 6daa975c4baa8907290fdef9fba9835ea1c86ac3
+      <li style="float:right"><a href = "signup.html">Sign Up!</a></li>
     </ul>
   </nav>
 
   <h3 align="center" class="titleBorder"><b>Design Your Profile!</b><br></h3>
 
 
-<<<<<<< HEAD
-  <form action="" method="post" class="absolutepositioning"> <!--abs positioning gives padding!-->
-    Full Name:<br>
-    <input type="text" id="fullName" name="fullName">
-    <span class="error" id="fullName-note"></span>
-
-    $nameLength = $_POST(["fullName"]);
-    <?php
-      if(isset($_POST['fullName']) && strlen($nameLength) > 4){
-        echo "Thank you for inputting your name correctly!";
-      }
-      elseif (empty($_POST['fullName']) || strlen($nameLength) <= 4){
-        echo "Please input your name properly.";
-      }
-    ?>
-
-    <br>
-    Major:<br>
-    <select name="major"> <br>
-      <option value="">Please Select a Major</option>
-      <option value="CS">Computer Science</option>
-      <option value="CPE">Computer Engineering</option>
-      <option value="EE">Electrical Engineering</option>
-      <option value="ME">Mechanical Engineering</option>
-      <option value="BME">Biomedical Engineering</option>
-      <option value="CE">Civil Engineering</option>
-      <option value="AE">Aerospace Engineering</option>
-      <option value="SE">Systems Engineering</option>
-    </select>
-    <br/>
-    if(!isset($_POST(['major'])){
-      echo "Please Select a Major";
-    }
-
-
-
-    Favorite Hobbies: <br>
-    <input type="text" name="favoriteHobbies"> <br>
-    <?php
-      if(isset($_POST(['favoriteHobbies']))
-      {
-        $hobbyStr = $_POST["favoriteHobbies"];
-        $hobbyArr = explode(",", $hobbyStr);
-        $arraySize = 0;
-        foreach($hobbyArr as $value){
-          arraySize = arraySize + 1;
-        }
-        echo "Your listed activities include";
-        for($count = 0, $count < $arraySize; $count++){
-          echo $hobbyArr[$count] . ",";
-        }
-
-
-
-    ?>
-
-
-    <br>
-
-
-    Year: <br>
-    <input type="radio" name="year" value="1st">1st Year<br>
-    <input type="radio" name="year" value="2nd"> 2nd Year<br>
-    <input type="radio" name="year" value="3rd"> 3rd Year <br>
-    <input type="radio" name="year" value="4th"> 4th Year <br>
-    <br>
-
-
-    <div class="container">
-
-    <div class="form-group">
-        <label for="socialMedia">Add Your Social Media so People Can Get to Know You!</label>
-        <input type="text" id="socialMedia" class="form-control" name="SM" />
-        <span class="error" id="socialMedia-note"></span>
-    </div>
-
-    <input type="button" class="btn btn-submit" id="addLink" value="Add Link" onclick="addRow()"/>
-  </form>
-
-    <div id="links">
-      <table id="linkTable" class="table" >
-        <thead>   <!-- set table headers -->
-          <tr>
-            <th>Social Media Link</th>
-            <th>(Remove)</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-
-  </div>
-
-
-
-
-  <script>
-  document.getElementById("fullName").addEventListener("mouseover", formInputValidation);
-  function formInputValidation(){ <!--attempted input validation!-->
-
-    var fullNameVal = document.getElementById("fullName").value;
-    if (fullNameVal === '')    // check if appropriate data are entered
-    {
-       document.getElementById("fullName").focus();
-       document.getElementById("fullName-note").innerHTML = "Please enter your Full Name";
-    }
-    else
-    {
-     document.getElementById("fullName-note").innerHTML = "";
-}
-
-  </script>
-
-=======
 
 
   <form onSubmit="return submitIt(this)" action="http://localhost:8080/HoosAround/session" method="POST" > <!--abs positioning gives padding!-->
@@ -248,7 +125,20 @@
        <dt>Name:</dt>
        <dd><input type="text" name="name" /></dd>
        <dt>Major </dt>
-       <dd><input type="text" name="major" /></dd>
+       <dd><select name="major">
+         <option value=""></option>
+         <option value="AE">Aerospace Engineering</option>
+         <option value="ChE">Chemical Engineering</option>
+         <option value="CE">Civil Engineering</option>
+         <option value="CpE">Computer Engineering</option>
+         <option value="CS">Computer Science</option>
+         <option value="EE">Electrical Engineering</option>
+         <option value="MSE">Materials Science</option>
+         <option value="ME">Mechanical Engineering</option>
+         <option value="SE">Systems Engineering</option>
+       </select>
+       </dd>
+
        <dt>Hobbies:</dt>
        <dd><textarea rows="5" cols="20" name="hobbies"></textarea> </dd>
       <dt>Year</dt>
@@ -260,7 +150,6 @@
 
   </form>
 
->>>>>>> 6daa975c4baa8907290fdef9fba9835ea1c86ac3
 
 
 </body>
