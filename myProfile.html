@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Profile</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="resources/css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  <script type="text/javascript">
+  function setFocus()
+  {
+    document.getElementById("name").focus();   // access element of document with id="taskdesc" and set focus on it
+  }
+
+  function submitIt(form)
+  {
+     errCount=0;
+     errorMsg="";
+     nameVal = form.name.value
+     if ( nameVal == "")
+     {
+        errorMsg += "\n\n"+(errCount+1)+". Please enter your name.";
+        errCount++;
+     }
+     majorVal = form.major.value
+     if ( majorVal == "")
+     {
+        errorMsg += "\n\n"+(errCount+1)+". Please enter your major";
+        errCount++;
+     }
+     hobbiesVal=form.hobbies.value
+     if (hobbiesVal == "")
+     {
+        errorMsg += "\n\n"+(errCount+1)+". Please enter some hobbies.";
+        errCount++;
+     }
+     yearVal = form.year.value
+     if (yearVal == "")
+     {
+        errorMsg += "\n\n"+(errCount+1)+". Please enter an email address."
+        errCount++;
+     }
+
+     if (errCount > 0)
+     {
+        alert ("Please correct the following " + errCount + " fields" + errorMsg);
+        return false;
+     }
+     else
+     {
+        <!-- alert("Thank you " + form.name.value + " for the information.") -->
+        return true;
+     }
+  }
+  </script>
+
+  <style>
+  .absolutepositioning {
+    position: absolute;
+    left: 10px;
+  }
+
+  .titleBorder{
+    border: 5px solid black;
+    outline-style: solid;
+    outline-color: LimeGreen;
+    outline-width: 7px;
+    width: 75%;
+    margin-left: 157px;
+}
+  </style>
+
+
+  <style>
+      .error {
+         color: red;
+         font-style: italic;
+      }
+    </style>
+
+    <style>
+      body{background-color: LightBlue}
+    </style>
+    
+</head>
+
+<body>
+  <script src="resources/js/scripts.js"></script>
+
+  <nav> <!--sitemap!-->
+    <ul>
+      <li><a href="table.html">HoosAround</a></li>
+      <li><a href="match-me.html">Match Me</a></li>
+      <li><a href="my-matches.html">My Matches</a></li>
+      <li style="float:right"><a class = "current" href="myProfile.html"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
+      <li style="float:right"><a href="myProfile.html">My Profile</a></li>
+      <li style="float:right"><a href = "signup.html">Sign Up!</a></li>
+    </ul>
+  </nav>
+
+  <h3 align="center" class="titleBorder"><b>Design Your Profile!</b><br></h3>
+
+
+
+
+  <form onSubmit="return submitIt(this)" action="http://localhost:8080/HoosAround/session" method="POST" > <!--abs positioning gives padding!-->
+    <dl>
+       <dt>Name:</dt>
+       <dd><input type="text" name="name" /></dd>
+       <dt>Major </dt>
+       <dd><select name="major">
+         <option value=""></option>
+         <option value="AE">Aerospace Engineering</option>
+         <option value="ChE">Chemical Engineering</option>
+         <option value="CE">Civil Engineering</option>
+         <option value="CpE">Computer Engineering</option>
+         <option value="CS">Computer Science</option>
+         <option value="EE">Electrical Engineering</option>
+         <option value="MSE">Materials Science</option>
+         <option value="ME">Mechanical Engineering</option>
+         <option value="SE">Systems Engineering</option>
+       </select>
+       </dd>
+
+       <dt>Hobbies:</dt>
+       <dd><textarea rows="5" cols="20" name="hobbies"></textarea> </dd>
+      <dt>Year</dt>
+      <dd><input type="text" name="year"/> </dd>
+
+    </dl>
+
+    <input type="submit" value="Submit" />
+
+  </form>
+
+
+
+</body>
+</html>
