@@ -192,6 +192,8 @@ public class servletSession extends HttpServlet
         out.println("<p>Hobbies: </p>" + session.getAttribute("hobbies") + "</p>");
         out.println("<p>Year: </p>" + session.getAttribute("year") + "</p>");
 
+        out.println("<br/><br/><a href=\"contact-us.jsp\">Need help? Contact us</a>");
+
         out.println("<br/><br/><a href=\"" + url + "?action=invalidate\">Logout</a>");
 
         //out.println("<br/><br/><a href=\"http://localhost/cs4640s18/php-servlet/contact_us.php\">Contact us</a>");
