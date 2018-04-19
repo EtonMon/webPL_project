@@ -26,10 +26,10 @@ li a:hover:not(.current) {
 
 
 .current {
-    background-color: #4CAF50;
+    background-color: dodgerblue;
 }
 
 .current:hover {
-    background-color: #4CAF50;
+    background-color: dodgerblue;
     text-decoration: none;
 }

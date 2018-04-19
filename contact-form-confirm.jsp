@@ -47,13 +47,14 @@
         </ul>
     </nav>
     Thank you for contacting us! We will get back to you as soon as we can.
+    <br>
     From: <jsp:getProperty name="contactmsg" property="from"/>
     <br>
     Date: <jsp:getProperty name="contactmsg" property="date"/>
     <br>
     Message: 
     <br>
-    <p><jsp:getProperty name="contactmsg" property="message"/></p>
+    <jsp:getProperty name="contactmsg" property="message"/>
     <br>
     <a href="http://localhost:8080/HoosAround/session">Return to My Profile</a>
     

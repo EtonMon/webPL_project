@@ -50,12 +50,11 @@
         <br>
         Date: <%= new Date() %>
         <br>
-        Message:
-        <br>
-        <form action="contact-us.jsp" method="POST">
+        <!--Message-->
+        <form id="messageForm" action="contact-us.jsp" method="POST">
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" rows="5" id="message"></textarea>
+                <textarea class="form-control" rows="5" id="message" name = "message"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -68,7 +67,8 @@
         <jsp:setProperty name='contactmsg' property='date' value="<%=date %>"/>
         <% String message = (String) request.getParameter("message"); %>
         <jsp:setProperty name='contactmsg' property='message' value="<%=message %>"/>
-        <jsp:forward page='contact-form-confirm.jsp'/>
+        <p><%=message %></p> 
+        <!-- <jsp:forward page='contact-form-confirm.jsp'/> -->
     <% } %>
 
 
