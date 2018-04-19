@@ -50,7 +50,6 @@
         <br>
         Date: <%= new Date() %>
         <br>
-        <!--Message-->
         <form id="messageForm" action="contact-us.jsp" method="POST">
             <div class="form-group">
                 <label for="message">Message</label>
