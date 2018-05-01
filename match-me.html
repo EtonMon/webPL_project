@@ -1,8 +1,9 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en"  ng-app="matchmakerApp">
 <head>
   <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
   <title>Match Me</title>
   <meta name="description" content="The HTML5 Herald">
@@ -48,7 +49,7 @@
   <script src="resources/js/scripts.js"></script>
   <nav>
     <ul>
-      <li><a href="index.html">HoosAround</a></li>
+      <li><a href="table.html">HoosAround</a></li>
       <li><a class="current" href="match-me.html">Match Me</a></li>
       <li><a href="my-matches.html">My Matches</a></li>
       <li style="float:right"><a href="http://localhost:8080/HoosAround/session"><img src="http://www.freeiconspng.com/uploads/profile-icon-9.png" width=20 height=20></a></li>
@@ -83,6 +84,47 @@
 
 
 </table>
+
+</br>
+</br>
+<h4>Additional Heuristics for Matching!</h4>
+
+
+<div ng-controller="CalendarController" ng-init="days=[]; calendarOrder=[Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday]">
+Which Days Do You Want to Hang?<br>
+<input type="text" ng-model="day" id="day">
+  <div>
+    You are free on: <span id="display_day"> {{ day }} </span>
+  </div>
+  <button ng-click="fillIn()">Fill in Calendar</button>
+
+  <div ng-repeat="day in days">
+    {{ day }}
+  </div>
+<br>
+<br>
+  <div>
+    What Time of the Day do You Bool? <input type="radio" name="time" value="Morning" ng-model="time"/>Morning
+    <input type="radio" name="time" value="Afternoon" ng-model="time"/>Afternoon <input type="radio" name="time" value="Evening" ng-model="time"/>Evening
+    <input type="radio" name="time" value="Night" ng-model="time"/>Night
+  </div>
+
+  <script>
+  function CalendarController($scope){
+    $scope.day="";
+
+    $scope.fillIn = function() {
+      var days = $scope.day.split(",");
+      $scope.days = days;
+
+    }
+  }
+    var myApp = angular.module("matchmakerApp", []);
+    myApp.controller("CalendarController", CalendarController);
+  </script>
+
+
+
 
 
 </body>
